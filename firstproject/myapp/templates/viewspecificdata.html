@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <form method="post" action="{% url 'viewspecificdata' %}">
+        {% csrf_token %}
+        <label for="uname">Username:</label>
+        <input type="text" name="uname" id="uname" required>
+        <br>
+        <label for="upsw">Password:</label>
+        <input type="password" name="upsw" id="upsw" required>
+        <br>
+        <button type="submit">View Details</button>
+    </form>
+</body>
+</html>

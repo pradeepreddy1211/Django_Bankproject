@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for detail in alldetails %}
+    <h3>name: {{detail.username}}</h3>
+    <h3>password: {{detail.password}}</h3>
+    <h3>dateofbirth: {{detail.date_of_birth}}</h3>
+    <h3>accountnumber: {{detail.account_number}}</h3>
+    <h3>balance: {{detail.balance}}</h3>
+    <h3>email: {{detail.email}}</h3>
+    {% endfor %}
+</body>
+</html>

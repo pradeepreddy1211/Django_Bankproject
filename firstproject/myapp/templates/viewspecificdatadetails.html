@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    
+    {% if message %}
+        <p>{{ message }}</p>
+    {% elif user_details %}
+        <p><strong>Username:</strong> {{ user_details.username }}</p>
+        <p><strong>Email:</strong> {{ user_details.email }}</p>
+        <p><strong>Date of Birth:</strong> {{ user_details.date_of_birth }}</p>
+        <p><strong>Account Number:</strong> {{ user_details.account_number }}</p>
+        <p><strong>Balance:</strong> {{ user_details.balance }}</p>
+    {% endif %}
+
+</body>
+</html>

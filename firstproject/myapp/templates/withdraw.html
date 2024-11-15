@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Amount</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #f5a623;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus {
+            border-color: #f8e71c;
+            outline: none;
+        }
+
+        button {
+            background-color: #50e3c2;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Withdraw Amount</h1>
+        <form method="post" action="{% url 'withdraw' %}">
+            {% csrf_token %}
+            <label for="account_no">Enter account number:</label>
+            <input type="text" name="account_no" id="account_no" required>
+            <br>
+            <label for="password">Enter password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <label for="amount">Enter amount:</label>
+            <input type="number" name="amount" id="amount" required>
+            <br>
+            <button type="submit">Withdraw</button>
+        </form>
+    </div>
+</body>
+</html>
